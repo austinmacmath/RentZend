@@ -10,14 +10,15 @@ import psycopg2
 import pandas as pd
 import matplotlib.pylab as plt
 import seaborn as sns
+import os
 
 #establish connection to database
 #uncomment the below
 conn = psycopg2.connect(
-        host = "138.68.224.211", 
+        host = os.getenv('HOST'), 
         database = "rentzend", 
         user = "austin", 
-        password = "eLKNd293ngfl!Sflkj",
+        password = os.getenv('PASSWORD')",
         port=2345
         )
 #creates dataframe directly from table RentZendLeads from database
